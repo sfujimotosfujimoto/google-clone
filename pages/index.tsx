@@ -1,10 +1,11 @@
 import { MicrophoneIcon, SearchIcon } from "@heroicons/react/solid"
 
+import Footer from "../components/Footer"
 import Head from "next/head"
 import Header from "../components/Header"
 import Image from "next/image"
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div>
       <Head>
@@ -35,6 +36,7 @@ export default function Home() {
       </form>
 
       {/* Footer */}
+      <Footer />
     </div>
   )
 }
