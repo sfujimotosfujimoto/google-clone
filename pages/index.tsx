@@ -1,17 +1,17 @@
 import { MicrophoneIcon, SearchIcon } from "@heroicons/react/solid"
-import React, { useRef } from "react"
+import { MouseEvent, useRef } from "react"
+import { NextRouter, useRouter } from "next/router"
 
 import Footer from "../components/Footer"
 import Head from "next/head"
 import Header from "../components/Header"
 import Image from "next/image"
-import { useRouter } from "next/router"
 
 export default function Home(): JSX.Element {
-  const router = useRouter()
-  const searchInputRef = useRef(null)
+  const router: NextRouter = useRouter()
+  const searchInputRef = useRef<HTMLInputElement>(null)
 
-  function search(event: MouseEvent) {
+  const search = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     const term = searchInputRef.current.value
     if (!term.trim()) return
